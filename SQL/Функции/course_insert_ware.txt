@@ -1,0 +1,3 @@
+BEGIN
+	INSERT INTO warehouses (name, quantity, amount) VALUES (name_in, quantity_in, amount_in);
+END;

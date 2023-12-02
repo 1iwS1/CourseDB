@@ -1,0 +1,3 @@
+BEGIN
+	UPDATE warehouses SET amount=amount_up WHERE id=id_up;
+END;

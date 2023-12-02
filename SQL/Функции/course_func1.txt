@@ -1,0 +1,8 @@
+BEGIN
+	RETURN QUERY
+	SELECT 
+	(SELECT SUM(amount * quantity) FROM sales WHERE sale_date<month_to::date AND sale_date>month_from::date)
+	-
+	(SELECT SUM(amount) FROM charges WHERE charge_date<month_to::date AND charge_date>month_from::date)
+	AS profit;
+END;

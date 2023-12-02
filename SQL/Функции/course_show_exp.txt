@@ -1,0 +1,4 @@
+BEGIN
+	RETURN QUERY
+	SELECT * FROM expense_items ORDER BY id;
+END;

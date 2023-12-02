@@ -1,0 +1,3 @@
+BEGIN
+	INSERT INTO expense_items (name) VALUES (name_in);
+END;

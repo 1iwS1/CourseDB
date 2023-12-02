@@ -1,0 +1,8 @@
+BEGIN
+
+	IF (NEW.amount) > 1000 THEN
+		raise exception 'amount above the limit';
+	END IF;
+	
+	return NEW;
+END;

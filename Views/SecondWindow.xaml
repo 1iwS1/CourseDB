@@ -1,0 +1,35 @@
+﻿<Window x:Class="CourseBD.Views.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseBD.Views"
+        mc:Ignorable="d"
+        Title="Log in"
+        Height="250" Width="300"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64*"></RowDefinition>
+            <RowDefinition Height="62*"></RowDefinition>
+            <RowDefinition Height="45*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" FontSize="10" Width="100" Height="25" Margin="47,4,46.6,35" HorizontalAlignment="Center" HorizontalContentAlignment="Center" >
+            Ник пользователя
+        </Label>
+        <TextBox Name="UserName" Grid.Column="0" Grid.Row="0" Width="100" Height="25" TextWrapping="Wrap" FontSize="13" Margin="0, 29, 0, 10" HorizontalAlignment="Center" ></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="1" FontSize="10" Width="100" Height="23" Margin="47,1,46.6,37.6" HorizontalAlignment="Center" HorizontalContentAlignment="Center" >
+            Пароль
+        </Label>
+        <TextBox Name="Password" Grid.Column="0" Grid.Row="1" Width="100" Height="25" TextWrapping="Wrap" FontSize="13" Margin="46,26,47.6,10.6" HorizontalAlignment="Center" ></TextBox>
+
+        <Button Name="UserEnter" Click="ButtonPassword" Grid.Column="0" Grid.Row="2" Height="25" Width="75" >
+            Войти
+        </Button>
+    </Grid>
+</Window>

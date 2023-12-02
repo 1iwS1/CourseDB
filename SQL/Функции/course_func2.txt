@@ -1,0 +1,8 @@
+BEGIN
+	RETURN QUERY
+	SELECT sales.id, amount*quantity AS sum
+	FROM sales
+	WHERE sale_date<=day_to::date AND sale_date>=day_from::date
+	ORDER BY sum DESC
+	LIMIT 5;
+END;

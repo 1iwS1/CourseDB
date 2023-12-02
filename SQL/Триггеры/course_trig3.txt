@@ -1,0 +1,8 @@
+BEGIN
+	
+	IF NOT EXISTS(SELECT DISTINCT sale_date FROM sales WHERE sale_date >= CURRENT_DATE) THEN
+		raise exception 'old sale';
+	END IF;
+	
+	return NEW;
+END;

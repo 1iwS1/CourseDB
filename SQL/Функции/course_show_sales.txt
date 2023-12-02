@@ -1,0 +1,4 @@
+BEGIN
+	RETURN QUERY
+	SELECT * FROM sales ORDER BY warehouse_id;
+END;

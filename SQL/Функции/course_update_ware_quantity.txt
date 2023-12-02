@@ -1,0 +1,3 @@
+BEGIN
+	UPDATE warehouses SET quantity=quantity_up WHERE id=id_up;
+END;

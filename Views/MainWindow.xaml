@@ -1,0 +1,121 @@
+﻿<Window x:Class="CourseBD.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseBD"
+        mc:Ignorable="d"
+        Title="Main"
+        Height="450"
+        Width="800"
+        ResizeMode="CanMinimize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"></RowDefinition>
+            <RowDefinition Height="71*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Click="ButtonSales" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="25" Margin="20,10,0,0" VerticalAlignment="Top" Width="75">
+            sales
+        </Button>
+        <Button Click="ButtonCharges" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="25" Margin="95,10,0,0" VerticalAlignment="Top" Width="75">
+            charges
+        </Button>
+        <Button Click="ButtonWare" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="25" Margin="20,35,0,0" VerticalAlignment="Top" Width="75">
+            warehouses
+        </Button>
+        <Button Click="ButtonExp" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="25" Margin="95,35,0,0" VerticalAlignment="Top" Width="75">
+            expense item
+        </Button>
+        <Button Name="Insert" Click="ButtonInsert" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="25" Margin="283,20,435.6,0" VerticalAlignment="Top" Width="75">
+            insert
+        </Button>
+        <Button Name="Update" Click="ButtonUpdate" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="25" Margin="375,20,343.6,0" VerticalAlignment="Top" Width="75">
+            update
+        </Button>
+        <Button Name="Delete" Click="ButtonDelete" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="25" Margin="468,20,250.6,0" VerticalAlignment="Top" Width="75">
+            delete
+        </Button>
+        <Canvas Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Width="75" Margin="0,0,117.6,355" Grid.RowSpan="2">
+            <Label Width="75" HorizontalContentAlignment="Center" Canvas.Top="8" >Прибыль</Label>
+            <Button Click="ButtonShowProfit" Height="20" Width="75" Canvas.Bottom="5" VerticalContentAlignment="Top">
+                функция 1
+            </Button>
+        </Canvas>
+        <Canvas Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Width="100">
+            <Label Content="Самые доходные&#10;        товары" Width="100" HorizontalContentAlignment="Center" Canvas.Top="0" FontSize="10"/>
+            <Button Click="ButtonShowByDates" Height="20" Width="75" Canvas.Bottom="5" Canvas.Left="12" VerticalContentAlignment="Top">
+                функция 2
+            </Button>
+        </Canvas>
+        <Button Name="Download" Click="ButtonDownload" Height="25" Width="75" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,22">
+            Скачать
+        </Button>
+        <Button Name="Browse" Click="ButtonBrowse" Height="25" Width="75" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="120,0,0,22">
+            Обзор
+        </Button>
+        <DataGrid Name="MainGrid" Grid.Column="0" Grid.Row="1" Height="260" AutoGenerateColumns="True" FontStyle="Italic" FontWeight="Normal" FontStretch="Normal" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Top"   HorizontalContentAlignment="Center" />
+        <Grid Name="ModifyCommandsView" Grid.Column="0" Grid.Row="1" >
+            <ListBox Name="ChooseTable" SelectionChanged="ListBoxController" SelectionMode="Single" HorizontalAlignment="Left" FontSize="13" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="93" Width="160" Margin="20,42.2,0,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top">
+                <Label FontWeight="Bold" Height="25" VerticalContentAlignment="Center" >Выберите таблицу</Label>
+                <ListBoxItem Height="30" >Товары</ListBoxItem>
+                <ListBoxItem Height="30" >Статьи расходов</ListBoxItem>
+            </ListBox>
+            <Canvas Name="Id" Height="30" Width="125" Margin="264,42,404.6,283.2">
+                <Label FontWeight="Bold" FontSize="15" Height="30" Width="25" Canvas.Top="0" Canvas.Left="0" >id</Label>
+                <TextBox Name="IdText" Width="100" Height="30" TextWrapping="Wrap" Canvas.Right="0" Canvas.Bottom="0" FontSize="13" ></TextBox>
+            </Canvas>
+            <Canvas Name="Name" Height="30" Width="150" Margin="239,98,404.6,227.2">
+                <Label FontWeight="Bold" FontSize="15" Height="30" Width="50" Canvas.Top="0" Canvas.Left="0" >name</Label>
+                <TextBox Name="NameText" Width="100" Height="30" TextWrapping="Wrap" Canvas.Right="0" Canvas.Bottom="0" ></TextBox>
+            </Canvas>
+            <Canvas Name="Quantity" Height="30" Width="170" Margin="455,42,168.6,283.2">
+                <Label FontWeight="Bold" FontSize="15" Height="30" Width="70" Canvas.Top="0" Canvas.Left="0" >quantity</Label>
+                <TextBox Name="QuantityText" Width="100" Height="30" TextWrapping="Wrap" Canvas.Right="0" Canvas.Bottom="0" ></TextBox>
+            </Canvas>
+            <Canvas Name="Amount" Height="30" Width="170" Margin="455,98,168.6,227.2">
+                <Label FontWeight="Bold" FontSize="15" Height="30" Width="70" Canvas.Top="0" Canvas.Left="0" >amount</Label>
+                <TextBox Name="AmountText" Width="100" Height="30" TextWrapping="Wrap" Canvas.Right="0" Canvas.Bottom="0" ></TextBox>
+            </Canvas>
+            <Canvas Name="Execute" Height="25" Width="70" Margin="264,280,269.6,45.2">
+                <Button Click="ButtonExecute" Width="70" Height="25" >
+                    Выполнить
+                </Button>
+            </Canvas>
+            <Canvas Name="Clear" Height="25" Width="70" Margin="687,72,36.6,259.2">
+                <Button Click="ButtonClear" Width="70" Height="25">
+                    Очистить
+                </Button>
+            </Canvas>
+        </Grid>
+        <Grid Name="FuncCommandsView" Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="13*"></RowDefinition>
+                <RowDefinition Height="71*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ComboBox Name="ChooseMonth" SelectionChanged="ComboxController" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="20,14,0,0">
+                <ComboBoxItem>Январь</ComboBoxItem>
+                <ComboBoxItem >Февраль</ComboBoxItem>
+                <ComboBoxItem >Март</ComboBoxItem>
+                <ComboBoxItem >Апрель</ComboBoxItem>
+                <ComboBoxItem >Май</ComboBoxItem>
+                <ComboBoxItem >Июнь</ComboBoxItem>
+                <ComboBoxItem >Июль</ComboBoxItem>
+                <ComboBoxItem >Август</ComboBoxItem>
+                <ComboBoxItem >Сентябрь</ComboBoxItem>
+                <ComboBoxItem >Октябрь</ComboBoxItem>
+                <ComboBoxItem >Ноябрь</ComboBoxItem>
+                <ComboBoxItem >Декабрь</ComboBoxItem>
+            </ComboBox>
+            <DataGrid Name="FuncGrid" Grid.Row="1" AutoGenerateColumns="True" FontStyle="Italic" FontWeight="Normal" FontStretch="Normal" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" />
+            <DatePicker Name="DateFrom" Grid.Row="0" Width="130" Height="25" HorizontalAlignment="Left" Margin="15 0 0 0" />
+            <DatePicker Name="DateTo" Grid.Row="0" Width="130" Height="25" HorizontalAlignment="Left" Margin="170 0 0 0" />
+            <Button Name="ExecuteDate" Click="ButtonExecuteDate" Grid.Row="0" Width="70" Height="25" HorizontalAlignment="Left" Margin="340 0 0 0" >
+                Выполнить
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

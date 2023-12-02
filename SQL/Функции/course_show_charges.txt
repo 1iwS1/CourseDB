@@ -1,0 +1,4 @@
+BEGIN
+	RETURN QUERY
+	SELECT * FROM charges ORDER BY expense_item_id;
+END;

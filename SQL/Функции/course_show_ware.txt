@@ -1,0 +1,4 @@
+BEGIN
+	RETURN QUERY
+	SELECT * FROM warehouses ORDER BY id;
+END;

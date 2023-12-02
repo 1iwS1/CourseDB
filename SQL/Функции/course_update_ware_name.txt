@@ -1,0 +1,3 @@
+BEGIN
+	UPDATE warehouses SET name=name_up WHERE id=id_up;
+END;
