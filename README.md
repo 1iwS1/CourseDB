@@ -38,3 +38,34 @@
 3.	Необходимо реализовать возможность просмотра оператором следующих показателей:
  - Прибыль магазина за заданный месяц.
  - Пять самых доходных товаров за заданный интервал дат.
+
+
+
+# CourseDB
+## Coursework in the subject of Databases
+
+### General task
+The store sells goods wholesale and retail from the warehouse. In this case, managers make sure that the warehouse is always in stock. Goods are purchased from an intermediary at a set price.
+The store subsequently sells them at a different price. Sales are recorded in a sales log where the date of sale, the quantity sold and the price per unit are noted.
+The money received from the difference in the purchase and sale of goods is spent by the store on various expense items. These expenses are recorded in the expense journal and are characterized by the date, amount, and the expense item itself.
+For example, each month the store pays wages to employees
+
+### Conditions regarding the database
+1.	Control of data integrity using the linkage mechanism
+2. modification operations of data groups and data in linked tables must be performed within transactions. 2.
+3. The application logic must be controlled by triggers. In particular, the following restrictions must be implemented:
+ - Does not allow adding an item to the goods table that does not have an amount specified
+ - Does not allow to add an expense with an amount greater than the specified amount
+ - Does not allow to change data in the sales table retroactively from today's date
+4.	All operations of calculating various indicators (from the requirements to the client application) should be realized by stored procedures.
+
+### Conditions regarding the client application
+1.	It is necessary to realize interfaces for input, modification and deletion of directories:
+ - Goods;
+ - Expense items.
+2.	In the main window of the application interfaces should be implemented:
+ - Sales log with the ability to set the item, date of sale, quantity and unit price.
+ - Expense log with the ability to set the date, amount and expense item.
+3. it is necessary to realize the possibility of operator viewing of the following indicators:
+ - Store profit for a given month.
+ - The five most profitable products for a given date interval.
